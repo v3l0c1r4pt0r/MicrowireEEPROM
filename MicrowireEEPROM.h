@@ -26,6 +26,8 @@ class MicrowireEEPROM {
   int ADDRWIDTH;
   // (half of) the clock period in us
   int HALF_CLOCK_PERIOD;
+  // indicator of common data in and out pin
+  int COMMON_DATA_IO;
 
   long transmit(int data, int bits);
   void send_opcode(char op);
@@ -37,6 +39,7 @@ class MicrowireEEPROM {
   void writeEnable(void);
   void writeDisable(void);
   void write(int addr, int data);
+  void bitout(int bit);
 };
 
 #endif
